@@ -28,13 +28,12 @@ nav {
     font-size: 28px;
     font-weight: bold;
     color: #ff6b6b;
-    white-space: nowrap; /* Prevent text wrapping for the logo */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    margin-left: 20px;
 }
 
 .nav-links li {
@@ -54,7 +53,6 @@ nav {
 
 .search-bar {
     margin-left: auto;
-    white-space: nowrap; /* Prevent the search bar from wrapping */
 }
 
 .search-bar input {
@@ -63,7 +61,6 @@ nav {
     border-radius: 20px;
     font-size: 14px;
     width: 180px;
-    /* Optional: adjust the width if needed */
 }
 
 /* Hero Section */
@@ -107,24 +104,40 @@ nav {
 /* Profile Section */
 .container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
     margin-top: 30px;
 }
 
+/* Profile List (Left Side) */
 .profile-list {
     flex-basis: 20%;
     padding-right: 20px;
+    position: relative;
 }
 
 .profile-list ul {
     list-style: none;
     padding: 0;
+    position: relative;
 }
 
 .profile-list ul li {
     margin: 15px 0;
+    position: relative;
+    padding-left: 20px; /* Add margin to the left */
+}
+
+/* Moving vertical line */
+.profile-list ul::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 45px; /* Default height for AIAH */
+    width: 4px;
+    background-color: #ff6b6b;
+    transition: top 0.5s ease, height 0.5s ease;
 }
 
 .profile-list ul li a {
@@ -135,10 +148,46 @@ nav {
     transition: color 0.3s ease;
 }
 
-.profile-list ul li a:hover, .profile-list ul li a:target {
+/* Highlight the selected member and move the vertical line */
+.profile-list ul li a:target {
     color: #ff6b6b;
 }
 
+/* Vertical line follows the selected member */
+#aiah:target ~ .profile-list ul::before,
+.profile-list ul::before {
+    top: 0;
+}
+
+#colet:target ~ .profile-list ul::before {
+    top: 45px;
+}
+
+#maloi:target ~ .profile-list ul::before {
+    top: 90px;
+}
+
+#gwen:target ~ .profile-list ul::before {
+    top: 135px;
+}
+
+#jhoanna:target ~ .profile-list ul::before {
+    top: 180px;
+}
+
+#stacey:target ~ .profile-list ul::before {
+    top: 225px;
+}
+
+#mikha:target ~ .profile-list ul::before {
+    top: 270px;
+}
+
+#sheena:target ~ .profile-list ul::before {
+    top: 315px;
+}
+
+/* Profile Display (Right Side) */
 .profile-info {
     flex-basis: 70%;
     background-color: #fff;
@@ -147,11 +196,18 @@ nav {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.profile-info img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    margin-top: 20px;
+.profile-info h1 {
+    font-size: 40px;
+    color: #ff6b6b;
+}
+
+.profile-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.profile-info strong {
+    font-weight: bold;
 }
 
 /* Hide all sections by default */
@@ -159,21 +215,56 @@ nav {
     display: none;
 }
 
-/* Show only the section that matches the clicked link */
+/* Show the selected member's profile */
 .profile-section:target {
     display: block;
 }
 
-/* Ensure AIAH is hidden if another member is selected */
-#colet:target ~ .profile-info #aiah,
-#maloi:target ~ .profile-info #aiah,
-#gwen:target ~ .profile-info #aiah,
-#jhoanna:target ~ .profile-info #aiah,
-#stacey:target ~ .profile-info #aiah,
-#mikha:target ~ .profile-info #aiah,
-#sheena:target ~ .profile-info #aiah {
-    display: none;
+/* Highlight the selected member and move the vertical line */
+.profile-list ul li a:target {
+    color: #ff6b6b;
 }
+
+/* Vertical line follows the selected member */
+.profile-list ul::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    background-color: #ff6b6b;
+    transition: top 0.5s ease, height 0.5s ease;
+}
+
+/* Move vertical line based on the selected profile */
+#colet:target ~ .profile-list ul::before {
+    top: 45px;
+}
+
+#maloi:target ~ .profile-list ul::before {
+    top: 90px;
+}
+
+#gwen:target ~ .profile-list ul::before {
+    top: 135px;
+}
+
+#jhoanna:target ~ .profile-list ul::before {
+    top: 180px;
+}
+
+#stacey:target ~ .profile-list ul::before {
+    top: 225px;
+}
+
+#mikha:target ~ .profile-list ul::before {
+    top: 270px;
+}
+
+#sheena:target ~ .profile-list ul::before {
+    top: 315px;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -188,10 +279,6 @@ nav {
 
     .profile-info {
         flex-basis: 100%;
-    }
-
-    .group-image {
-        width: 80%;
     }
 
     /* Stack the navigation items vertically on small screens */
