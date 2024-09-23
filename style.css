@@ -1,0 +1,212 @@
+/* General reset and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe4e1;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #ff9a9e;
+    padding: 20px 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff6b6b;
+    white-space: nowrap; /* Prevent text wrapping for the logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6b6b;
+}
+
+.search-bar {
+    margin-left: auto;
+    white-space: nowrap; /* Prevent the search bar from wrapping */
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    width: 180px;
+    /* Optional: adjust the width if needed */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.image-container {
+    margin-bottom: 30px;
+}
+
+.group-image {
+    width: 60%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.social-icons {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icons .icon {
+    margin: 10px 0;
+    text-decoration: none;
+    color: #ff6b6b;
+    font-size: 30px;
+    transition: color 0.3s ease;
+}
+
+.social-icons .icon:hover {
+    color: #ff9999;
+}
+
+/* Profile Section */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.profile-list {
+    flex-basis: 20%;
+    padding-right: 20px;
+}
+
+.profile-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-list ul li {
+    margin: 15px 0;
+}
+
+.profile-list ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.profile-list ul li a:hover, .profile-list ul li a:target {
+    color: #ff6b6b;
+}
+
+.profile-info {
+    flex-basis: 70%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-info img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Hide all sections by default */
+.profile-section {
+    display: none;
+}
+
+/* Show only the section that matches the clicked link */
+.profile-section:target {
+    display: block;
+}
+
+/* Ensure AIAH is hidden if another member is selected */
+#colet:target ~ .profile-info #aiah,
+#maloi:target ~ .profile-info #aiah,
+#gwen:target ~ .profile-info #aiah,
+#jhoanna:target ~ .profile-info #aiah,
+#stacey:target ~ .profile-info #aiah,
+#mikha:target ~ .profile-info #aiah,
+#sheena:target ~ .profile-info #aiah {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .profile-list {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    .profile-info {
+        flex-basis: 100%;
+    }
+
+    .group-image {
+        width: 80%;
+    }
+
+    /* Stack the navigation items vertically on small screens */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .search-bar {
+        margin-top: 10px;
+        align-self: flex-start;
+    }
+}
