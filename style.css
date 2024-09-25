@@ -11,12 +11,13 @@ body {
     color: #333;
 }
 
-/* Header and Navigation */
+/* Header and Navigation styling */
 header {
     background-color: #ff9a9e;
     padding: 20px 50px;
 }
 
+/* Navigation bar layout using flexbox */
 nav {
     display: flex;
     justify-content: space-between;
@@ -24,22 +25,26 @@ nav {
     flex-wrap: nowrap;
 }
 
+/* Logo styling */
 .logo {
     font-size: 28px;
     font-weight: bold;
     color: #ff6b6b;
 }
 
+/* Navigation links styling */
 .nav-links {
     list-style: none;
     display: flex;
     margin-left: 20px;
 }
 
+/* Individual navigation list items */
 .nav-links li {
     margin: 0 20px;
 }
 
+/* Link styling with hover effects */
 .nav-links a {
     text-decoration: none;
     color: white;
@@ -51,6 +56,7 @@ nav {
     color: #ff6b6b;
 }
 
+/* Search bar styling */
 .search-bar {
     margin-left: auto;
 }
@@ -70,16 +76,19 @@ nav {
     position: relative;
 }
 
+/* Image container for the hero section */
 .image-container {
     margin-bottom: 30px;
 }
 
+/* Group image styling with a defined width and border radius */
 .group-image {
     width: 60%;
     height: auto;
     border-radius: 20px;
 }
 
+/* Social media icons layout, aligned vertically on the right side */
 .social-icons {
     position: absolute;
     top: 50%;
@@ -89,6 +98,7 @@ nav {
     flex-direction: column;
 }
 
+/* Social media icon styling with hover effect */
 .social-icons .icon {
     margin: 10px 0;
     text-decoration: none;
@@ -101,7 +111,7 @@ nav {
     color: #ff9999;
 }
 
-/* Profile Section */
+/* Profile Section (Main Content) */
 .container {
     display: flex;
     justify-content: space-between;
@@ -111,89 +121,46 @@ nav {
 
 /* Profile List (Left Side) */
 .profile-list {
-    flex-basis: 20%;
+    flex-basis: 20%; /* Occupies 20% of the container width */
     padding-right: 20px;
     position: relative;
 }
 
+/* Styling for the unordered list inside profile list */
 .profile-list ul {
     list-style: none;
     padding: 0;
     position: relative;
 }
 
+/* Individual profile items in the list */
 .profile-list ul li {
     margin: 15px 0;
     position: relative;
-    padding-left: 20px; /* Add margin to the left */
+    padding-left: 20px; /* Margin to the left for space */
 }
 
-/* Moving vertical line */
-.profile-list ul::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 45px; /* Default height for AIAH */
-    width: 4px;
-    background-color: #ff6b6b;
-    transition: top 0.5s ease, height 0.5s ease;
-}
-
+/* Profile link styling inside the list */
 .profile-list ul li a {
     text-decoration: none;
-    color: black;
+    color: black; /* Default color is black */
     font-weight: bold;
     font-size: 20px;
     transition: color 0.3s ease;
 }
 
-/* Highlight the selected member and move the vertical line */
+/* Change font color when selected using :target */
 .profile-list ul li a:target {
     color: #ff6b6b;
 }
 
-/* Vertical line follows the selected member */
-#aiah:target ~ .profile-list ul::before,
-.profile-list ul::before {
-    top: 0;
-}
-
-#colet:target ~ .profile-list ul::before {
-    top: 45px;
-}
-
-#maloi:target ~ .profile-list ul::before {
-    top: 90px;
-}
-
-#gwen:target ~ .profile-list ul::before {
-    top: 135px;
-}
-
-#jhoanna:target ~ .profile-list ul::before {
-    top: 180px;
-}
-
-#stacey:target ~ .profile-list ul::before {
-    top: 225px;
-}
-
-#mikha:target ~ .profile-list ul::before {
-    top: 270px;
-}
-
-#sheena:target ~ .profile-list ul::before {
-    top: 315px;
-}
-
 /* Profile Display (Right Side) */
 .profile-info {
-    flex-basis: 70%;
+    flex-basis: 70%; /* Occupies 70% of the container width */
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Slight shadow for depth */
 }
 
 .profile-info h1 {
@@ -210,78 +177,80 @@ nav {
     font-weight: bold;
 }
 
-/* Hide all sections by default */
+/* Hide all profile sections by default */
 .profile-section {
     display: none;
 }
 
-/* Show the selected member's profile */
+/* Show the selected profile section */
 .profile-section:target {
     display: block;
 }
 
-/* Highlight the selected member and move the vertical line */
-.profile-list ul li a:target {
-    color: #ff6b6b;
+/* Timeline section for BINI History */
+.history-section {
+    margin-top: 30px;
+    position: relative;
+    padding-left: 50px;
 }
 
-/* Vertical line follows the selected member */
-.profile-list ul::before {
-    content: "";
+.history-section h1 {
+    font-size: 32px;
+    color: #ff6b6b;
+    margin-bottom: 30px;
+}
+
+.history-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 40px;
+}
+
+.history-section h2::before {
+    content: '';
     position: absolute;
     left: 0;
-    top: 0;
-    width: 4px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
     background-color: #ff6b6b;
-    transition: top 0.5s ease, height 0.5s ease;
+    border-radius: 50%;
 }
 
-/* Move vertical line based on the selected profile */
-#colet:target ~ .profile-list ul::before {
-    top: 45px;
+.history-section h2::after {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 40px;
+    width: 2px;
+    height: calc(100% - 50px);
+    background-color: #ff6b6b;
 }
 
-#maloi:target ~ .profile-list ul::before {
-    top: 90px;
+.history-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-left: 40px;
 }
 
-#gwen:target ~ .profile-list ul::before {
-    top: 135px;
-}
-
-#jhoanna:target ~ .profile-list ul::before {
-    top: 180px;
-}
-
-#stacey:target ~ .profile-list ul::before {
-    top: 225px;
-}
-
-#mikha:target ~ .profile-list ul::before {
-    top: 270px;
-}
-
-#sheena:target ~ .profile-list ul::before {
-    top: 315px;
-}
-
-
-/* Responsive Design */
+/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
+    /* Stack profile list and info vertically on small screens */
     .container {
         flex-direction: column;
     }
 
     .profile-list {
-        flex-basis: 100%;
+        flex-basis: 100%; /* Full width on smaller screens */
         margin-bottom: 20px;
     }
 
     .profile-info {
-        flex-basis: 100%;
+        flex-basis: 100%; /* Full width on smaller screens */
     }
 
-    /* Stack the navigation items vertically on small screens */
+    /* Stack navigation links vertically on small screens */
     nav {
         flex-direction: column;
         align-items: flex-start;
