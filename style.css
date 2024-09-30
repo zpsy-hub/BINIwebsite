@@ -45,9 +45,15 @@ nav {
 
 /* Logo styling */
 .logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #ff6b6b;
+    display: flex; 
+    align-items: center; 
+    margin-right: 20px; 
+}
+
+.logo img {
+    width: 80px; 
+    height: auto; 
+    display: block; 
 }
 
 /* Navigation links */
