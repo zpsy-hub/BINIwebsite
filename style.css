@@ -384,7 +384,28 @@ input:checked + label {
     padding-left: 50px;
 }
 
-/* Remove circles entirely */
+/* Add circles for each timeline item */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0; /* Center the circle horizontally */
+    transform: translateX(-50%); /* Adjust for odd items */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff6b6b;
+    border: 4px solid white;
+}
+
+/* Adjust vertical centering */
+.timeline-item:nth-child(odd)::before {
+    left: 100%; /* Adjust for even items */
+}
+
+.timeline-item:nth-child(even)::before {
+    top: 40px; /* Adjust as necessary for even items */
+}
+
 /* Timeline item headers */
 .timeline-item h2 {
     font-size: 24px;
