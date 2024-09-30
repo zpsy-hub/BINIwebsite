@@ -25,10 +25,15 @@ section {
 
 /* Header and Navigation Styling */
 header {
-    background-color: #ff9a9e;
+    position: fixed; /* Keep the header fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent; /* Make background transparent */
     padding: 20px 50px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 0; /* Remove margin to avoid spacing issues */
+    z-index: 1000; /* Ensure it stays above other content */
+    transition: background-color 0.3s; /* Optional: add a transition for effect */
 }
 
 nav {
@@ -38,12 +43,14 @@ nav {
     flex-wrap: nowrap;
 }
 
+/* Logo styling */
 .logo {
     font-size: 28px;
     font-weight: bold;
     color: #ff6b6b;
 }
 
+/* Navigation links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -73,21 +80,34 @@ nav {
     width: 180px;
 }
 
+/* Optional: Change background color on scroll */
+header.scrolled {
+    background-color: rgba(255, 154, 158, 0.8); /* Semi-transparent when scrolled */
+}
+
 /* Hero Section */
 .hero {
     text-align: center;
-    margin: 50px 0;
+    margin: 0; /* Remove any margin to eliminate spacing */
     position: relative;
+    border: none; /* Ensure no border is applied */
+    padding: 0; /* Remove padding */
+    background: transparent; /* Make sure the background is transparent */
+    box-shadow: none; /* Remove any box shadow */
+    overflow: hidden; /* Prevent any overflow that might cause shadow effects */
 }
 
 .image-container {
-    margin-bottom: 30px;
+    margin-bottom: 0; /* Adjust margin to eliminate any additional spacing */
 }
 
+/* Adjust the group image positioning */
 .group-image {
     width: 60%;
     height: auto;
     border-radius: 20px;
+    margin-top: -30px; /* Adjust this value to lower the image */
+    position: relative; /* Keep relative positioning */
 }
 
 .social-icons {
