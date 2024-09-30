@@ -86,9 +86,9 @@ nav {
     width: 180px;
 }
 
-/*Change background color on scroll */ /*not yet done - Shane*/
-header.scrolled {
-    background-color: rgba(255, 154, 158, 0.8); /* Semi-transparent when scrolled */
+header.scrolled { /*Change background color on scroll */
+    background-color: rgba(255, 154, 157, 0.626); /* Semi-transparent when scrolled */
+    transition: background-color 0.3s ease; 
 }
 
 /* Hero Section */
