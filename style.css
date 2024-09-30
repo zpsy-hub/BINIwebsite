@@ -563,6 +563,70 @@ input:checked + label {
     font-size: 14px;
     color: #333;
 }
+
+/* General styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe4e1;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Styling for the Watch BINI section */
+.watch-bini {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Section title styling */
+.watch-bini h1 {
+    color: #ff6b6b;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-transform: uppercase; /* Make the title uppercase for emphasis */
+}
+
+/* Playlist container grid layout */
+.playlist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid with a minimum width of 300px */
+    gap: 20px;
+    justify-items: center; /* Center each playlist item */
+}
+
+/* Individual playlist item styling */
+.playlist-item {
+    width: 100%; /* Makes the item responsive */
+    max-width: 350px; /* Maximum width to keep a balanced layout */
+    text-align: center; /* Center the text inside */
+}
+
+/* Styling for the iframes */
+iframe {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Styling for playlist descriptions */
+.playlist-item p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6b6b; /* Match with the theme colors */
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+    /* When the screen is smaller, stack the playlist items vertically */
+    .playlist-container {
+        grid-template-columns: 1fr; /* One column on smaller screens */
+    }
+}
+
 /* Footer*/
 /* Footer Styling */
 footer {
