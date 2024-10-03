@@ -666,6 +666,11 @@ iframe {
     color: #ff6b6b; /* Match with the theme colors */
 }
 
+iframe {
+    border: none;
+}
+
+
 /* Responsive behavior for smaller screens */
 @media (max-width: 768px) {
     /* When the screen is smaller, stack the playlist items vertically */
