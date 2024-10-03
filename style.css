@@ -9,6 +9,16 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Pink color and styling to all h2 elements */
+h2 {
+    font-size: 36px;
+    color: #ff6b6b; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    text-transform: uppercase; 
+}
+
+
 /* Cursor */
 html {
     cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="48" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23FF6B6B" stroke-width="2" stroke-linejoin="round" d="M12 8S9.75 5 7 5a4.5 4.5 0 0 0-4.5 4.5C2.5 14.5 12 20 12 20s9.5-5.5 9.5-10.5A4.5 4.5 0 0 0 17 5c-2.75 0-5 3-5 3Z"></path></svg>'), auto;
@@ -381,12 +391,25 @@ input:checked + label {
 }
 
 /* Header for the timeline */
-.history-section h1 {
+.history-section h2 {
     font-size: 32px;
     color: #ff6b6b;
     margin-bottom: 30px;
     text-align: center;
 }
+
+/* Timeline item headers */
+.timeline-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Timeline item paragraphs */
+.timeline-item p {
+    font-size: 18px;
+    margin: 0;
+}
+
 
 /* Timeline Container */
 .timeline {
@@ -453,17 +476,6 @@ input:checked + label {
     top: 40px; /* Adjust as necessary for even items */
 }
 
-/* Timeline item headers */
-.timeline-item h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-/* Timeline item paragraphs */
-.timeline-item p {
-    font-size: 18px;
-    margin: 0;
-}
 
 /* Music Frame Section */
 .music-frame {
