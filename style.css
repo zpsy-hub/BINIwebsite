@@ -126,6 +126,7 @@ header.scrolled { /*Change background color on scroll */
     background: transparent;
     box-shadow: none; 
     overflow: hidden; 
+    margin-bottom: 50px;
 }
 
 .image-container {
@@ -217,17 +218,34 @@ header.scrolled { /*Change background color on scroll */
     align-items: center;
 }
 
+/* Ensure image scales correctly */
 .image-frame img {
     width: 100%;
-    max-width: 500px;
-    height: auto;
+    max-width: 500px; /* Prevent image from exceeding 500px in width */
+    height: auto; /* Maintain the aspect ratio */
+    max-height: 400px; /* Add max-height to prevent vertical stretching */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    object-fit: cover; /* Ensures the image scales without distortion */
 }
 
+/* Add hover effect for image */
 .image-frame img:hover {
     transform: scale(1.05);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .image-frame {
+        max-width: 100%;
+    }
+
+    .image-frame img {
+        max-width: 100%;
+        max-height: 300px; /* Scale down for mobile screens */
+        object-fit: contain; /* Ensure image fits within the smaller height */
+    }
 }
 
 /* Profile Information Styling */
