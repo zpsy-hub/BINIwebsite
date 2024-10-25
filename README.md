@@ -1,4 +1,4 @@
-# BINI Fan Platform
+# BINI Fan Platform Milestone 2
 
 This project aims to establish a comprehensive online platform that serves as a digital hub for BINI fans and the group itself. It connects fans to BINI's music, updates, biographies, and upcoming events. This platform is a school project for the course MO-IT-120 Web Systems and Technology at Mapua Malayan Digital College.
 
