@@ -259,7 +259,15 @@ header.scrolled { /*Change background color on scroll */
     text-align: center; 
     overflow: visible; /* Ensure that items aren't being cut off */
     max-height: none; /* Remove any height restrictions */
+    height: auto;
 }
+
+.member-list,
+.carousel-container {
+    overflow: visible;
+    max-height: none; /* Remove any height restriction */
+}
+
 
 .member-list h2 {
     font-size: 24px;
@@ -287,6 +295,18 @@ header.scrolled { /*Change background color on scroll */
     color: inherit; /* Inherit color from parent (which is #333) */
     transition: color 0.3s ease;
 }
+
+.member-list ul li {
+    display: block;
+    overflow: visible;
+}
+
+.member-list ul li a {
+    display: inline;
+    overflow: visible;
+}
+
+
 
 /* On hover, the text color changes slightly for interaction feedback */
 .member-list ul li a:hover {

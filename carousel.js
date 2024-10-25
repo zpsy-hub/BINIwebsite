@@ -49,10 +49,12 @@ function showProfile(member) {
             title.textContent = 'BINI MIKHA';
             description.innerHTML = '<strong>Full Name:</strong> Mikhaela Janna Jimenea Lim<br><strong>Date of Birth:</strong> November 8, 2003<br><strong>Position:</strong> Main Rapper, Lead Dancer, Visual<br><strong>Hometown:</strong> Cebu City<br><strong>Zodiac Sign:</strong> Scorpio';
             break;
-        case 'sheena':
-            image.src = 'Images/Sheena.svg';  // Path to Sheena's image
-            title.textContent = 'BINI SHEENA';
-            description.innerHTML = '<strong>Full Name:</strong> Sheena Mae Manuel Catacutan<br><strong>Date of Birth:</strong> May 9, 2004<br><strong>Position:</strong> Main Dancer, Youngest<br><strong>Hometown:</strong> Santiago City, Isabela<br><strong>Zodiac Sign:</strong> Taurus';
-            break;
+            case 'sheena':
+                console.log("Sheena's profile selected"); // Debugging statement
+                image.src = 'Images/Sheena.svg';  // Path to Sheena's image
+                title.textContent = 'BINI SHEENA';
+                description.innerHTML = '<strong>Full Name:</strong> Sheena Mae Manuel Catacutan<br><strong>Date of Birth:</strong> May 9, 2004<br><strong>Position:</strong> Main Dancer, Youngest<br><strong>Hometown:</strong> Santiago City, Isabela<br><strong>Zodiac Sign:</strong> Taurus';
+                break;
+            
     }
 }
