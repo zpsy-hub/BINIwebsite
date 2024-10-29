@@ -1,4 +1,3 @@
-
 /*Change navigation bar background color on scroll */
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header'); 
