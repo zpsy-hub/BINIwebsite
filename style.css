@@ -38,8 +38,6 @@ body {
     padding: 20px;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
-
 /* Header and Navbar Styling */
 header {
     position: fixed;
@@ -61,8 +59,10 @@ header.scrolled {
 }
 
 .navbar-brand {
-    margin-left: 20px; /* Add margin to the left of the logo */
-    padding-top: 20px; /* Add more padding to the top of the logo for alignment */
+    margin: 0; /* Reset any unnecessary margins */
+    display: flex;
+    align-items: center; /* Ensure logo is centered vertically */
+    padding-top: 0; /* Remove padding to improve alignment */
 }
 
 .nav-logo {
@@ -76,6 +76,7 @@ header.scrolled {
     align-items: center; /* Vertically align all items */
     justify-content: space-between;
     height: 100%; /* Make sure container fills the height of navbar */
+    padding: 0 15px; /* Add padding to ensure items are not too close to edges */
 }
 
 /* Navigation Links Styling (Initial State) */
@@ -132,11 +133,26 @@ header.scrolled .nav-link {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
+    .container-fluid {
+        display: flex;
+        align-items: center; /* Vertically align all items */
+        justify-content: flex-start; /* Ensure alignment to the left */
+        height: 100%; /* Make sure container fills the height of navbar */
+        padding: 0; /* Remove default padding */
+    }
+
+    .navbar-brand {
+        margin: 0; /* Remove all margins */
+        padding: 0; /* Remove any additional padding */
+        padding-right: 20px; /* Add some spacing between logo and nav links */
+    }
+
     .nav-logo {
-        width: 90px; /* Adjust logo size for smaller screens */
+        width: 80px; /* Adjust logo size for better alignment on smaller screens */
     }
 
     .navbar-nav {
+        margin-left: 0; /* Remove margin to allow items to align directly next to the logo */
         gap: 15px; /* Reduce spacing between links on smaller screens */
     }
 
@@ -144,7 +160,6 @@ header.scrolled .nav-link {
         font-size: 16px; /* Adjust link font size for smaller screens */
     }
 }
-
 
 /* Hero Section */
 .hero {
@@ -156,23 +171,30 @@ header.scrolled .nav-link {
     background: transparent;
     box-shadow: none; 
     overflow: hidden; 
+    height: 100%; /* Make the hero section take full height of the viewport */
     margin-bottom: 50px;
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
 }
 
 .image-container {
-    margin-bottom: 0; 
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Vertically center the image if needed */
+    margin: 0;
 }
 
 /* Adjust the group image positioning */
 .group-image {
-    width: 60%;
+    width: 100%;
     height: auto;
+    max-width: 1200px; /* Optional: Limit the max width if needed */
+    margin: 0 auto;
     border-radius: 20px;
-    margin-top: -30px; 
-    position: relative; 
-    margin-bottom: 60px;
 }
 
+/* Social Icons - Vertical Positioning for Large Screens */
 .social-icons {
     position: absolute;
     top: 50%;
@@ -183,6 +205,7 @@ header.scrolled .nav-link {
     gap: 10px;
 }
 
+/* Social Icons Styles */
 .social-icons .icon {
     text-decoration: none;
     color: #ff6b6b;
@@ -194,355 +217,463 @@ header.scrolled .nav-link {
     color: #ff9999;
 }
 
-/* Profile Section (Main Content) */
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    margin-top: 60px;
-    gap: 20px;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 60px; /* Add space after the navigation bar */
+    }
+
+    .group-image {
+        margin-top: 20px; /* Adjust image spacing after the navigation bar */
+    }
+
+    .hero {
+        height: auto; /* Allow the hero section to fit content on smaller screens */
+        padding-bottom: 20px;
+    }
+
+    /* Make Social Icons Horizontal for Smaller Screens */
+    .social-icons {
+        position: static;
+        margin-top: 20px;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    /* Reduce Icon Size on Smaller Screens */
+    .social-icons .icon {
+        font-size: 24px;
+        margin: 0 5px;
+    }
+
+    /* Hide Social Icons When Scrolling Past Landing Page */
+    .social-icons.hide-on-scroll {
+        display: none;
+    }
 }
 
-/* Carousel Styling */
-.carousel-container {
-    position: relative;
+/* General styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffe4e1;
+    margin: 0;
     display: flex;
-    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .center {
     width: 100%;
-    height: 400px;
-}
-
-.profile-list {
-    flex-basis: 20%;
-    padding-right: 20px;
-}
-
-.profile-list ul {
-    list-style: none;
-    padding: 0;
-}
-
-.profile-list ul li {
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-.profile-list ul li label {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 20px;
-    transition: color 0.3s ease;
-    cursor: pointer;
-}
-
-.profile-list ul li label:hover {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Title styling */
+  .top {
+    font-size: 2.5rem;
     color: #ff6b6b;
-}
-
-/* Image Frame Styling */
-.image-frame {
-    flex-basis: 50%;
+    padding: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  /* Carousel container for desktop */
+  .carousel {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* Ensure image scales correctly */
-.image-frame img {
+    position: relative;
+    width: 80%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  /* Left and Right Sections */
+  .left, .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Left item (text content for each member) */
+  .left-item, .item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Active state for showing current content */
+  .left-item.active, .item.active {
+    display: flex;
+  }
+  
+  /* Title and description styles within left section */
+  .title {
+    font-size: 2rem;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .text {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1.6;
+  }
+  
+  /* Right section image styling */
+  .right .item img {
     width: 100%;
-    max-width: 500px; /* Prevent image from exceeding 500px in width */
-    height: auto; /* Maintain the aspect ratio */
-    max-height: 400px; /* Add max-height to prevent vertical stretching */
+    max-width: 350px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-    object-fit: cover; /* Ensures the image scales without distortion */
-}
-
-/* Add hover effect for image */
-.image-frame img:hover {
+  }
+  
+  .right .item img:hover {
     transform: scale(1.05);
-}
-
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    .image-frame {
-        max-width: 100%;
-    }
-
-    .image-frame img {
-        max-width: 100%;
-        max-height: 300px; /* Scale down for mobile screens */
-        object-fit: contain; /* Ensure image fits within the smaller height */
-    }
-}
-
-/* Profile Information Styling */
-.profile-info {
-    flex-basis: 30%;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.profile-info h1 {
-    font-size: 32px;
+  }
+  
+  /* Navigation arrows for desktop */
+  .carousel-arrow {
+    font-size: 2rem;
     color: #ff6b6b;
-    margin-bottom: 10px;
-}
-
-.profile-info p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin: 10px 0;
-}
-
-/* Member List Section */
-.member-list {
-    flex-basis: 20%;
-    padding-right: 20px;
-    margin-left: 60px; /* Add space to the left of the member list */
-    text-align: center; 
-    overflow: visible; /* Ensure that items aren't being cut off */
-    max-height: none; /* Remove any height restrictions */
-    height: auto;
-}
-
-.member-list,
-.carousel-container {
-    overflow: visible;
-    max-height: none; /* Remove any height restriction */
-}
-
-
-.member-list h2 {
-    font-size: 24px;
-    color: #333; /* Subtle color for the title */
-    margin-bottom: 10px;
-    text-align: center; 
-}
-
-.member-list ul {
-    list-style: none;
-    padding: 0;
-}
-
-.member-list ul li {
-    margin-bottom: 15px; /* Space between each member name */
-    font-size: 18px; /* Size for the member names */
-    font-weight: bold; /* Bolder weight for the names */
-    color: #333; /* Make the names look like normal text */
-    cursor: pointer;
-}
-
-/* Styling for the names to make them look like plain text */
-.member-list ul li a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit color from parent (which is #333) */
-    transition: color 0.3s ease;
-}
-
-.member-list ul li {
-    display: block;
-    overflow: visible;
-}
-
-.member-list ul li a {
-    display: inline;
-    overflow: visible;
-}
-
-
-
-/* On hover, the text color changes slightly for interaction feedback */
-.member-list ul li a:hover {
-    color: #666; /* Slightly lighter color on hover */
-}
-
-/* Remove the underline when active, keeping it minimal */
-.member-list ul li a:active {
-    color: #666; /* Ensure no hyperlink color */
-}
-
-
-/* Carousel Transition Logic */
-#carousel-wrapper {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s ease-in-out;
-}
-
-.profile-section {
-    flex: 0 0 100%;
-    display: none;
-    padding: 20px;
-}
-
-input[type="radio"] {
-    display: none;
-}
-
-/* Display the active profile section */
-input[id="about"]:checked ~ #carousel-wrapper .about-profile,
-input[id="aiah"]:checked ~ #carousel-wrapper .aiah-profile,
-input[id="colet"]:checked ~ #carousel-wrapper .colet-profile,
-input[id="maloi"]:checked ~ #carousel-wrapper .maloi-profile,
-input[id="gwen"]:checked ~ #carousel-wrapper .gwen-profile,
-input[id="jhoanna"]:checked ~ #carousel-wrapper .jhoanna-profile,
-input[id="stacey"]:checked ~ #carousel-wrapper .stacey-profile,
-input[id="mikha"]:checked ~ #carousel-wrapper .mikha-profile,
-input[id="sheena"]:checked ~ #carousel-wrapper .sheena-profile {
-    display: block;
-}
-
-/* Active Member Styling */
-input:checked + label {
-    color: #ff6b6b;
-}
-
-/* Profile Images for Individual Members */
-.profile-section img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .carousel-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .image-frame {
-        max-width: 100%;
-    }
-
-    .profile-info {
-        flex-basis: 100%;
-    }
-
-    .member-list {
-        flex-basis: 100%;
-    }
-
-    .profile-section img {
-        max-width: 100%;
-    }
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .profile-list,
-    .profile-info {
-        flex-basis: 100%;
-    }
-}
-
-
-/* Timeline Section for BINI History */
-.history-section {
-    margin-top: 100px;
-    padding-left: 50px;
-    position: relative;
-}
-
-/* Header for the timeline */
-.history-section h2 {
-    font-size: 32px;
-    color: #ff6b6b;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/* Timeline item headers */
-.timeline-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-/* Timeline item paragraphs */
-.timeline-item p {
-    font-size: 18px;
-    margin: 0;
-}
-
-
-/* Timeline Container */
-.timeline {
-    position: relative;
-    padding: 0;
-    list-style: none;
-    margin: 0;
-}
-
-/* Timeline central line */
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: #ff6b6b;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Timeline item structure */
-.timeline-item {
-    position: relative;
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-    padding-bottom: 30px;
-}
-
-/* Items on the left side */
-.timeline-item:nth-child(odd) {
-    left: 0;
-    text-align: right;
-    padding-right: 50px;
-}
-
-/* Items on the right side */
-.timeline-item:nth-child(even) {
-    left: 50%;
-    text-align: left;
-    padding-left: 50px;
-}
-
-/* Add circles for each timeline item */
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 0; /* Center the circle horizontally */
-    transform: translateX(-50%); /* Adjust for odd items */
-    width: 20px;
-    height: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
     border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: absolute;
+  }
+  
+  .carousel-arrow:hover {
     background: #ff6b6b;
-    border: 4px solid white;
+    color: #fff;
+  }
+  
+  .left-arrow {
+    left: -40px;
+  }
+  
+  .right-arrow {
+    right: -40px;
+  }
+  
+  /* Member links (navigation links for each member) */
+  .member-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .member-links a {
+    color: #ff6b6b;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 30px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .member-links a:hover {
+    background: #ff6b6b;
+    color: #fff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    /* Centered mobile view */
+    .center {
+      padding: 10px;
+      width: 100%;
+    }
+  
+    /* Stacked layout for members */
+    .carousel {
+      flex-direction: column;
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  
+    /* Hide navigation arrows and member links */
+    .carousel-arrow, .member-links {
+      display: none;
+    }
+  
+    /* Stacked view for each member: image on top, details below */
+    .item, .left-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px 0; /* Add space between profiles */
+      width: 100%;
+      max-width: 500px; /* Limit width for better readability */
+    }
+  
+    /* Image styling for mobile */
+    .item img {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    /* Title and text sizing for mobile */
+    .title {
+      font-size: 1.8rem;
+      margin-top: 10px;
+    }
+  
+    .text {
+      font-size: 1rem;
+      text-align: center;
+      line-height: 1.6;
+      padding: 0 20px;
+      max-width: 100%;
+    }
+  }
+  
+  /* Slide-in animation from left */
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft 0.5s ease forwards;
+  }
+  
+  /* Scale-in animation */
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .scale-in {
+    animation: scaleIn 0.5s ease forwards;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  /* Additional style for BINI title */
+  .bini-title {
+    color: #ff6b6b;
+    font-weight: bold;
+  }
+  
+
+/* BINI History Timeline */
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* Adjust vertical centering */
-.timeline-item:nth-child(odd)::before {
-    left: 100%; /* Adjust for even items */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Titillium Web", sans-serif;
+  overflow-x: hidden;
 }
 
-.timeline-item:nth-child(even)::before {
-    top: 40px; /* Adjust as necessary for even items */
+/* Section and carousel container */
+.history-carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background-color: #ffe4e1; /* Soft pink background */
 }
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Section heading inside the carousel frame */
+.section-heading {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff6b6b; /* Main pink color for text */
+  text-align: center;
+  z-index: 3;
+  text-transform: uppercase; /* Optional for emphasis */
+}
+
+/* Slide container */
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+/* Individual slide */
+.main-post {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.main-post__image {
+  width: 100%;
+  height: 100%;
+}
+
+.main-post__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content overlay on top of the image */
+.main-post__content {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 235, 238, 0.8); /* Light pink overlay */
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.main-post__tag-wrapper {
+  margin-bottom: 0.5rem;
+}
+
+.main-post__tag {
+  display: inline-block;
+  background: #ff6b6b; /* Main pink for tag background */
+  color: #fff;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  border-radius: 15px;
+}
+
+.main-post__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+  color: #ff6b6b; /* Main pink for title */
+}
+
+.main-post__content p {
+  color: #333; /* Darker text color for readability */
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.main-post__link {
+  display: inline-block;
+  color: #ff6b6b; /* Pink border and text */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #ff6b6b;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.main-post__link:hover {
+  background: #ff6b6b; /* Pink background on hover */
+  color: #fff; /* White text on hover */
+}
+
+/* Scrollbar styling (for better aesthetics, if needed) */
+.slides::-webkit-scrollbar {
+  height: 8px;
+}
+
+.slides::-webkit-scrollbar-thumb {
+  background: #ff6b6b; /* Main pink scrollbar */
+  border-radius: 10px;
+}
+
+.slides::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Arrow styles */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(255, 107, 107, 0.7); /* Transparent pink for arrows */
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background: #ff6b6b; /* Solid pink on hover */
+}
+
+.carousel-arrow--left {
+  left: 10px;
+}
+
+.carousel-arrow--right {
+  right: 10px;
+}
+
+
 
 
 /* Music Frame Section */

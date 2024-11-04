@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BINI Fanpage</title>
+    <!-- Links to stylesheets and icons -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/0L7N9I5Boj5zG5YErE3c3hD/8aR/63t9fLmt5j" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- Website icon --> 
     <link rel="icon" href="Images/Flower_Icon.svg" type="image/svg+xml">
 </head>
-
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
@@ -43,150 +41,307 @@
     </header>
     
      <!-- Landing page with pictures and social media -->
-    <div class="hero">
-        <div class="image-container">
-            <!-- Landing page display group image -->
-            <img src="Images/BINI_Group_Pic.svg" alt="BINI Group Image" class="group-image">
+    <div class="container-fluid hero bg-light text-center py-5">
+    <div class="row align-items-center">
+        <!-- Image Container -->
+        <div class="col-12 col-md-6 mb-4 mb-md-0">
+            <div class="image-container">
+                <img src="Images/BINI_Group_Pic.svg" alt="BINI Group Image" class="img-fluid group-image">
+            </div>
         </div>
-        <!-- Social media -->
-        <div class="social-icons">
-            <a href="https://open.spotify.com/artist/7tNO3vJC9zlHy2IJOx34ga" class="icon" target="_blank"><i class="fab fa-spotify"></i></a>
-            <a href="https://www.youtube.com/channel/UCtOcDBKgyr-f50SgbMErFkQ" class="icon" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@bini_ph" class="icon" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/BINIph.official/" class="icon" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/bini_ph" class="icon" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/BINI_ph" class="icon" target="_blank"><i class="fab fa-twitter"></i></a>
+
+        <!-- Social Media Icons -->
+        <div class="col-12 col-md-6">
+            <div class="social-icons d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://open.spotify.com/artist/7tNO3vJC9zlHy2IJOx34ga" class="icon" target="_blank">
+                    <i class="fab fa-spotify fs-3"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCtOcDBKgyr-f50SgbMErFkQ" class="icon" target="_blank">
+                    <i class="fab fa-youtube fs-3"></i>
+                </a>
+                <a href="https://www.tiktok.com/@bini_ph" class="icon" target="_blank">
+                    <i class="fab fa-tiktok fs-3"></i>
+                </a>
+                <a href="https://www.facebook.com/BINIph.official/" class="icon" target="_blank">
+                    <i class="fab fa-facebook fs-3"></i>
+                </a>
+                <a href="https://www.instagram.com/bini_ph" class="icon" target="_blank">
+                    <i class="fab fa-instagram fs-3"></i>
+                </a>
+                <a href="https://x.com/BINI_ph" class="icon" target="_blank">
+                    <i class="fab fa-twitter fs-3"></i>
+                </a>
+            </div>
         </div>
-    </div>
-  
-<!-- Carousel Container -->
-<div class="carousel-container">
-    <!-- Image Frame (Carousel) -->
-    <div class="image-frame">
-        <!-- Placeholder image to be updated dynamically -->
-        <img id="carousel-image" src="Images/bini_feel_good_album_cover.svg" alt="Group Image">
-    </div>
-
-    <!-- Profile Information dynamically changing with selection -->
-    <div class="profile-info">
-        <h2 id="profile-title">About BINI</h2>
-        <p id="profile-description">Filipino pop phenomenon BINI features 8 multi-talented members: Aiah, Colet, Maloi, Gwen, Stacey, Mikha, Jhoanna, and Sheena. The girls have quickly become the biggest female Filipino artist in history...</p>
-    </div>
-
-    <!-- Member List Selection (rightmost) -->
-    <div class="member-list">
-        <h2>Meet the Members</h2>
-        <ul>
-            <li><a href="javascript:void(0)" onclick="showProfile('group')">About BINI</a></li>
-            <li><a href="javascript:void(0)" onclick="showProfile('aiah')">AIAH</a></li>
-            <li><a href="javascript:void(0)" onclick="showProfile('colet')">COLET</a></li>
-            <li><a href="javascript:void(0)" onclick="showProfile('maloi')">MALOI</a></li>
-            <li><a href="javascript:void(0)" onclick="showProfile('gwen')">GWEN</a></li>
-            <li><a href="javascript:void(0)" onclick="showProfile('jhoanna')">JHOANNA</a></li>
-            <li><a href="javascript:void(0)" onclick="showProfile('stacey')">STACEY</a></li>
-            <li><a href="javascript:void(0)" onclick="showProfile('mikha')">MIKHA</a></li>
-            <li style="display: block; visibility: visible;">
-                <a href="javascript:void(0)" onclick="showProfile('sheena')">SHEENA</a>
-            </li>
-            
-        </ul>        
     </div>
 </div>
 
-<!-- BINI History Section -->
-<section id="history" class="history-section">
-    <h2>BINI History Timeline</h2>
-    <ul class="timeline">
-        <li class="timeline-item">
-            <h3>August 2018</h3>
-            <p>ABS-CBN launched Star Hunt Academy (SHA) with 250 auditionees. The first set of female SHA trainees was selected, consisting of 12 girls.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>August 3, 2019</h3>
-            <p>SHA trainees, including the eventual Bini members, debuted during the online pre-show of *Pinoy Big Brother: Otso* Big Night.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>August 15, 2019</h3>
-            <p>Bini performed at their first mall show in Taguig.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>December 2019</h3>
-            <p>Bini participated in the National Youth Commission event, named youth ambassadors.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>May 2020</h3>
-            <p>Performance practice video released, showcasing Bini's training progress, singing and dancing to "Ngiti."</p>
-        </li>
-        <li class="timeline-item">
-            <h3>August 2020</h3>
-            <p>Bini participated in Happy Hallyu Day 4 event, performing K-pop covers of "In & Out" and "How You Like That."</p>
-        </li>
-        <li class="timeline-item">
-            <h3>November 6, 2020</h3>
-            <p>Released lyric video for "Da Coconut Nut."</p>
-        </li>
-        <li class="timeline-item">
-            <h3>November 20, 2020</h3>
-            <p>Released official music video for "Da Coconut Nut."</p>
-        </li>
-        <li class="timeline-item">
-            <h3>November 21, 2020</h3>
-            <p>First live performance of "Da Coconut Nut" on *It's Showtime*.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>December 4, 2020</h3>
-            <p>Bini signed a contract with Star Magic and Star Music.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>June 4, 2021</h3>
-            <p>Bini officially debuted with the single "Born to Win." Hosted *Bini: The Runway* debut launch via KTX.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>June 11, 2021</h3>
-            <p>Held *The Showcase*, performing debut tracks and introducing members' training experiences.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>September 10, 2021</h3>
-            <p>Released third single, "Kapit Lang."</p>
-        </li>
-        <li class="timeline-item">
-            <h3>September 30, 2021</h3>
-            <p>Performed at *Miss Universe Philippines 2021*, with "Born to Win" as the pageant's official song for the swimsuit and evening gown competitions.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>February 2022</h3>
-            <p>Featured on the cover of Xpedition Magazine.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>September 29, 2022</h3>
-            <p>Released sophomore studio album *Feel Good*.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>October 15, 2022</h3>
-            <p>Performed at Mr. Music: The Hits of Jonathan Manalo concert.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>March 8, 2024</h3>
-            <p>Released debut EP *Talaarawan*, coinciding with International Women’s Day.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>April 2024</h3>
-            <p>"Pantropiko" topped the Daily Top Songs chart on Spotify Philippines.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>July 2024</h3>
-            <p>"Pantropiko" reached 100 million streams on Spotify and YouTube Music.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>June 2024</h3>
-            <p>Held their first major solo concert *Biniverse*, extended to three sold-out shows at New Frontier Theater.</p>
-        </li>
-        <li class="timeline-item">
-            <h3>August 27, 2024</h3>
-            <p>Received *Voices of Asia Award* alongside SB19 at the *Billboard K Power 100* launch event in Seoul, South Korea.</p>
-        </li>
-    </ul>
-</section>
+  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet BINI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="center">
+    <div class="top">Meet BINI</div>
+    <div class="carousel">
+      <button class="carousel-arrow left-arrow" onclick="prevMember()">&#9664;</button>
+      
+      <!-- Left Section with Text Content for Each Member -->
+      <div class="left">
+        <div class="left-item active">
+          <div class="title">About BINI</div>
+          <div class="text">BINI is an 8-member girl group of young, modern Filipinas who aspire to share their talent and passion with the world. The girls have quickly become the biggest female Filipino artist in history,  holding both the #1 and #2 spots on the top Filipino music charts simultaneously with the hits “Salamin, Salamin” and “Pantropiko.”</div>
+        </div>
+        <div class="left-item">
+          <div class="title">BINI AIAH</div>
+          <div class="text">
+            <strong>Full Name:</strong> Maraiah Queen Arceta<br>
+            <strong>Date of Birth:</strong> January 27, 2001<br>
+            <strong>Position:</strong> Main Rapper, Sub-Vocalist, Visual<br>
+            <strong>Hometown:</strong> Lapu-Lapu City, Cebu<br>
+            <strong>Zodiac Sign:</strong> Aquarius
+          </div>
+        </div>
+        <div class="left-item">
+          <div class="title">BINI COLET</div>
+          <div class="text">
+            <strong>Full Name:</strong> Ma. Nicolette Floresnos Vergara<br>
+            <strong>Date of Birth:</strong> September 14, 2001<br>
+            <strong>Position:</strong> Main Vocalist, Lead Dancer, Lead Rapper<br>
+            <strong>Hometown:</strong> Tagbilaran City, Bohol<br>
+            <strong>Zodiac Sign:</strong> Virgo
+          </div>
+        </div>
+        <div class="left-item">
+          <div class="title">BINI MALOI</div>
+          <div class="text">
+            <strong>Full Name:</strong> Mary Loi Yves Kipte Ricalde<br>
+            <strong>Date of Birth:</strong> May 27, 2002<br>
+            <strong>Position:</strong> Main Vocalist<br>
+            <strong>Hometown:</strong> General Trias City, Cavite<br>
+            <strong>Zodiac Sign:</strong> Gemini
+          </div>
+        </div>
+        <div class="left-item">
+          <div class="title">BINI GWEN</div>
+          <div class="text">
+            <strong>Full Name:</strong> Gweneth Llaguno Apuli<br>
+            <strong>Date of Birth:</strong> June 19, 2003<br>
+            <strong>Position:</strong> Lead Vocalist, Lead Rapper<br>
+            <strong>Hometown:</strong> Daraga, Albay<br>
+            <strong>Zodiac Sign:</strong> Gemini
+          </div>
+        </div>
+        <div class="left-item">
+          <div class="title">BINI JHOANNA</div>
+          <div class="text">
+            <strong>Full Name:</strong> Jhoanna Christine Burgos Robles<br>
+            <strong>Date of Birth:</strong> January 26, 2004<br>
+            <strong>Position:</strong> Leader, Lead Vocalist, Lead Rapper<br>
+            <strong>Hometown:</strong> Calamba, Laguna<br>
+            <strong>Zodiac Sign:</strong> Aquarius
+          </div>
+        </div>
+        <div class="left-item">
+          <div class="title">BINI STACEY</div>
+          <div class="text">
+            <strong>Full Name:</strong> Stacey Aubrey Casumpang Sevilleja<br>
+            <strong>Date of Birth:</strong> July 13, 2003<br>
+            <strong>Position:</strong> Main Rapper, Lead Dancer<br>
+            <strong>Hometown:</strong> Bagbag, Nueva Vizcaya<br>
+            <strong>Zodiac Sign:</strong> Cancer
+          </div>
+        </div>
+        <div class="left-item">
+          <div class="title">BINI MIKHA</div>
+          <div class="text">
+            <strong>Full Name:</strong> Mikhaela Janna Jimenea Lim<br>
+            <strong>Date of Birth:</strong> November 8, 2003<br>
+            <strong>Position:</strong> Main Rapper, Lead Dancer, Visual<br>
+            <strong>Hometown:</strong> Cebu City<br>
+            <strong>Zodiac Sign:</strong> Scorpio
+          </div>
+        </div>
+        <div class="left-item">
+          <div class="title">BINI SHEENA</div>
+          <div class="text">
+            <strong>Full Name:</strong> Sheena Mae Manuel Catacutan<br>
+            <strong>Date of Birth:</strong> May 9, 2004<br>
+            <strong>Position:</strong> Main Dancer, Youngest<br>
+            <strong>Hometown:</strong> Santiago City, Isabela<br>
+            <strong>Zodiac Sign:</strong> Taurus
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Section with Image Content for Each Member -->
+      <div class="right">
+        <div class="item active"><img src="Images/bini_feel_good_album_cover.svg" alt="About BINI" /></div>
+        <div class="item"><img src="Images/Aiah.svg" alt="BINI Aiah" /></div>
+        <div class="item"><img src="Images/Colet.svg" alt="BINI Colet" /></div>
+        <div class="item"><img src="Images/Maloi.svg" alt="BINI Maloi" /></div>
+        <div class="item"><img src="Images/Gwen.svg" alt="BINI Gwen" /></div>
+        <div class="item"><img src="Images/Jhoanna.svg" alt="BINI Jhoanna" /></div>
+        <div class="item"><img src="Images/Stacey.svg" alt="BINI Stacey" /></div>
+        <div class="item"><img src="Images/Mikha.svg" alt="BINI Mikha" /></div>
+        <div class="item"><img src="Images/Sheena.svg" alt="BINI Sheena" /></div>
+      </div>
+      
+      <button class="carousel-arrow right-arrow" onclick="nextMember()">&#9654;</button>
+    </div>
+
+    <!-- Navigation Links for Quick Member Access -->
+    <div class="member-links">
+      <a href="#about-bini" onclick="showMember(0)">About BINI</a>
+      <a href="#aiah" onclick="showMember(1)">Aiah</a>
+      <a href="#colet" onclick="showMember(2)">Colet</a>
+      <a href="#maloi" onclick="showMember(3)">Maloi</a>
+      <a href="#gwen" onclick="showMember(4)">Gwen</a>
+      <a href="#jhoanna" onclick="showMember(5)">Jhoanna</a>
+      <a href="#stacey" onclick="showMember(6)">Stacey</a>
+      <a href="#mikha" onclick="showMember(7)">Mikha</a>
+      <a href="#sheena" onclick="showMember(8)">Sheena</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<section class="history-carousel">
+    <h2 class="section-heading">BINI History</h2>
+    <div class="carousel">
+    <button class="carousel-arrow carousel-arrow--left" onclick="prevSlide()">&#10094;</button>
+    <div class="slides">
+      <!-- Event 1 -->
+      <article class="main-post">
+        <div class="main-post__image">
+          <img src="Images/bini-full-charlotte-magazine.jpg" alt="Nationwide Audition For Star Hunt Academy" loading="lazy" />
+        </div>
+        <div class="main-post__content">
+          <div class="main-post__tag-wrapper">
+            <span class="main-post__tag">2018</span>
+          </div>
+          <h1 class="main-post__title">Nationwide Audition For Star Hunt Academy</h1>
+          <p>ABS-CBN's Star Hunt led a nationwide audition for fresh talents for the Star Hunt Academy Program. After a rigorous selection process, 250 hopefuls were narrowed down to 12 female trainees.</p>
+          <a class="main-post__link" href="https://www.abs-cbn.com/newsroom/news-releases/2018/8/19/star-hunt-follows-stories-and-journeys-of-filipi?lang=en" target="_blank">find out more</a>
+        </div>
+      </article>
+      
+      <!-- Event 2 -->
+      <article class="main-post">
+        <div class="main-post__image">
+          <img src="Images/bini-full-black shirt-white bg.jfif" alt="Introduced As Star Hunt Academy Girl Trainees" loading="lazy" />
+        </div>
+        <div class="main-post__content">
+          <div class="main-post__tag-wrapper">
+            <span class="main-post__tag">August 2019</span>
+          </div>
+          <h1 class="main-post__title">Introduced As Star Hunt Academy Girl Trainees</h1>
+          <p>BINI debuted with eight members selected from the initial Star Hunt Academy trainees.</p>
+          <a class="main-post__link" href="https://x.com/starhuntacademy/status/1159717361361936384" target="_blank">find out more</a>
+        </div>
+      </article>
+  
+      <!-- Event 3 -->
+      <article class="main-post">
+        <div class="main-post__image">
+          <img src="Images/bini-full-cherry-zoom-out.jfif" alt="Training" loading="lazy" />
+        </div>
+        <div class="main-post__content">
+          <div class="main-post__tag-wrapper">
+            <span class="main-post__tag">August 2019 - October 2020</span>
+          </div>
+          <h1 class="main-post__title">Training</h1>
+          <p>The girls underwent intensive training under Kitchy Molina and South Korean coaches from MU Doctor Academy.</p>
+        </div>
+      </article>
+  
+      <!-- Event 4 -->
+      <article class="main-post">
+        <div class="main-post__image">
+          <img src="Images/bini-full-yellow.jpg" alt="BINI Lineup Announced" loading="lazy" />
+        </div>
+        <div class="main-post__content">
+          <div class="main-post__tag-wrapper">
+            <span class="main-post__tag">October 22, 2020</span>
+          </div>
+          <h1 class="main-post__title">BINI Lineup Announced</h1>
+          <p>Director Lauren Dyogi revealed the final BINI lineup, sharing their journey to the debut lineup.</p>
+          <a class="main-post__link" href="https://www.cosmo.ph/entertainment/timeline-of-bini-rise-to-stardom-a6906-20240703-lfrm" target="_blank">find out more</a>
+        </div>
+      </article>
+  
+      <!-- Event 5 -->
+      <article class="main-post">
+        <div class="main-post__image">
+          <img src="Images/bini-full-charlotte-magazine.jpg" alt="Pre-Debut Single 'Da Coconut Nut'" loading="lazy" />
+        </div>
+        <div class="main-post__content">
+          <div class="main-post__tag-wrapper">
+            <span class="main-post__tag">November 2020</span>
+          </div>
+          <h1 class="main-post__title">Pre-Debut Single "Da Coconut Nut"</h1>
+          <p>BINI released "Da Coconut Nut" and had a live performance on "It's Showtime," signing with Star Magic shortly after.</p>
+          <a class="main-post__link" href="https://www.youtube.com/watch?v=kTu-Vz95EvQ" target="_blank">find out more</a>
+        </div>
+      </article>
+  
+      <!-- Event 6 -->
+      <article class="main-post">
+        <div class="main-post__image">
+          <img src="Images/bini-full-black shirt-white bg.jfif" alt="Official Debut Single 'Born To Win'" loading="lazy" />
+        </div>
+        <div class="main-post__content">
+          <div class="main-post__tag-wrapper">
+            <span class="main-post__tag">June 4, 2021</span>
+          </div>
+          <h1 class="main-post__title">Official Debut Single "Born To Win"</h1>
+          <p>BINI released their debut single "Born to Win," making a bold entrance in Francis Libiran designs.</p>
+          <a class="main-post__link" href="https://www.youtube.com/watch?v=lR1oFiwfB5M" target="_blank">find out more</a>
+        </div>
+      </article>
+  
+      <!-- Event 7 -->
+      <article class="main-post">
+        <div class="main-post__image">
+          <img src="Images/bini-full-cherry-zoom-out.jfif" alt="'Pantropiko' and P-Pop Success" loading="lazy" />
+        </div>
+        <div class="main-post__content">
+          <div class="main-post__tag-wrapper">
+            <span class="main-post__tag">March 8, 2024</span>
+          </div>
+          <h1 class="main-post__title">"Pantropiko" and P-Pop Success</h1>
+          <p>"Pantropiko" became a viral hit, reaching 3 million streams and positioning BINI as a leading P-Pop group.</p>
+          <a class="main-post__link" href="https://www.cosmo.ph/entertainment/bini-p-pop-girl-group-a5322-20240307-lfrm2" target="_blank">find out more</a>
+        </div>
+      </article>
+  
+      <!-- Event 8 -->
+      <article class="main-post">
+        <div class="main-post__image">
+          <img src="Images/bini-full-yellow.jpg" alt="Brand Partnerships" loading="lazy" />
+        </div>
+        <div class="main-post__content">
+          <div class="main-post__tag-wrapper">
+            <span class="main-post__tag">2024</span>
+          </div>
+          <h1 class="main-post__title">Brand Partnerships</h1>
+          <p>BINI became ambassadors for Samsung's Galaxy A series and collaborated with brands like Jollibee, Modess, and Shopee.</p>
+          <a class="main-post__link" href="https://youtu.be/vtYc6mUQC6o" target="_blank">find out more</a>
+        </div>
+      </article>
+    </div>
+    <button class="carousel-arrow carousel-arrow--right" onclick="nextSlide()">&#10095;</button>
+  </div>
 
 
 <!-- Music Frame Section -->
@@ -432,10 +587,14 @@
     </div>
 </footer>
 
-    <!-- Java Script here !! -->
+    <!-- Java Script !! -->
     <script src="navbar.js"></script>
     <script src="carousel.js"></script>
-
+    <script src="timeline.js"></script>
+    <script src="hide-social-icons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-..."></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 </body>
 </html>
 
