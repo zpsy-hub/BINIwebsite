@@ -31,7 +31,7 @@ a:hover, button:hover, .custom-pointer-element:hover {
 
   
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins" , sans-serif;
     background-color: #ffe4e1;
     color: #333;
     line-height: 1.6;
@@ -262,6 +262,10 @@ body {
     flex-direction: column;
     align-items: center;
   }
+
+  .section {
+    margin-top: 50px; /* Adjust value for desired spacing */
+  }
   
   .center {
     width: 100%;
@@ -277,7 +281,8 @@ body {
     margin-bottom: 30px;
     font-weight: bold;
   }
-  
+
+   
   /* Carousel container for desktop */
   .carousel {
     display: flex;
@@ -366,10 +371,13 @@ body {
   
   /* Member links (navigation links for each member) */
   .member-links {
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
   }
   
   .member-links a {
@@ -377,7 +385,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     font-size: 1rem;
-    padding: 30px 20px;
+    padding: 10px 20px 5px 5px;
     border-radius: 5px;
     transition: background 0.3s ease, color 0.3s ease;
   }
@@ -394,31 +402,7 @@ body {
       padding: 10px;
       width: 100%;
     }
-  
-    /* Stacked layout for members */
-    .carousel {
-      flex-direction: column;
-      width: 100%;
-      max-width: 100%;
-      padding: 0;
-      margin: 0;
-    }
-  
-    /* Hide navigation arrows and member links */
-    .carousel-arrow, .member-links {
-      display: none;
-    }
-  
-    /* Stacked view for each member: image on top, details below */
-    .item, .left-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 20px 0; /* Add space between profiles */
-      width: 100%;
-      max-width: 500px; /* Limit width for better readability */
-    }
-  
+    
     /* Image styling for mobile */
     .item img {
       width: 90%;
@@ -440,7 +424,24 @@ body {
       padding: 0 20px;
       max-width: 100%;
     }
-  }
+  
+    .member-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  
+    .member-links a {
+      padding: 10px 5px; /* Smaller padding */
+      text-align: center;
+      box-sizing: border-box;
+    }
+    }
+
   
   /* Slide-in animation from left */
   @keyframes slideInLeft {
@@ -496,8 +497,7 @@ body {
   
 
 /* BINI History Timeline */
-@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap");
-
+/* General styling for the body */
 *,
 *::before,
 *::after {
@@ -507,7 +507,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
 
@@ -517,6 +517,7 @@ body {
   width: 100%;
   height: 100vh;
   color: #fff;
+  margin-top: 50px;
   background-color: #ffe4e1; /* Soft pink background */
 }
 
@@ -527,18 +528,15 @@ body {
   overflow: hidden;
 }
 
-/* Section heading inside the carousel frame */
+/* Section heading */
 .section-heading {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 20px; /* Adjust as needed */
   font-size: 2.5rem;
   font-weight: bold;
   color: #ff6b6b; /* Main pink color for text */
   text-align: center;
+  text-transform: uppercase;
   z-index: 3;
-  text-transform: uppercase; /* Optional for emphasis */
 }
 
 /* Slide container */
