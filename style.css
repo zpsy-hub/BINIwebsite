@@ -266,6 +266,12 @@ body {
   .section {
     margin-top: 50px; /* Adjust value for desired spacing */
   }
+
+  #profile {
+    padding-top: 100px; /* Adjust the padding value as needed */
+    margin-top: -100px; /* This prevents the navbar from overlapping the section content */
+}
+
   
   .center {
     width: 100%;
@@ -510,6 +516,9 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
+#history {
+  padding-top: 40px; 
+}
 
 /* Section and carousel container */
 .history-carousel {
@@ -675,6 +684,7 @@ body {
 
 
 /* Music Frame Section */
+
 .music-frame {
     padding: 50px 20px;
     background-color: #fff5f5;
@@ -695,6 +705,12 @@ body {
     color: #333;
     margin-bottom: 40px;
 }
+
+#music {
+  padding-top: 80px; /* Adjust the padding value as needed */
+}
+
+
 
 /* Album Gallery */
 .album-gallery {
@@ -783,6 +799,10 @@ body {
 .singles-gallery::-webkit-scrollbar-thumb {
     background-color: #ff6b6b;
     border-radius: 10px;
+}
+
+#watch-bini {
+    padding-top: 80px; 
 }
 
 /* Each Single */
@@ -1007,10 +1027,12 @@ footer {
         flex-basis: 100%;
     }
 
+
+
     .history-section {
         padding-left: 20px;
     }
-
+ 
     .timeline-item {
         width: 100%;
         text-align: left;
