@@ -1,0 +1,91 @@
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin: 0; 
+    position: relative;
+    border: none; 
+    padding: 0; 
+    background: transparent;
+    box-shadow: none; 
+    overflow: hidden; 
+    height: 100%; /* Make the hero section take full height of the viewport */
+    margin-bottom: 50px;
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Vertically center the image if needed */
+    margin: 0;
+}
+
+/* Adjust the group image positioning */
+.group-image {
+    width: 100%;
+    height: auto;
+    max-width: 1200px; /* Optional: Limit the max width if needed */
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+/* Social Icons - Vertical Positioning for Large Screens */
+.social-icons {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Social Icons Styles */
+.social-icons .icon {
+    text-decoration: none;
+    color: #ff6b6b;
+    font-size: 30px;
+    transition: color 0.3s ease;
+}
+
+.social-icons .icon:hover {
+    color: #ff9999;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 60px; /* Add space after the navigation bar */
+    }
+
+    .group-image {
+        margin-top: 20px; /* Adjust image spacing after the navigation bar */
+    }
+
+    .hero {
+        height: auto; /* Allow the hero section to fit content on smaller screens */
+        padding-bottom: 20px;
+    }
+
+    /* Make Social Icons Horizontal for Smaller Screens */
+    .social-icons {
+        position: static;
+        margin-top: 20px;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    /* Reduce Icon Size on Smaller Screens */
+    .social-icons .icon {
+        font-size: 24px;
+        margin: 0 5px;
+    }
+
+    /* Hide Social Icons When Scrolling Past Landing Page */
+    .social-icons.hide-on-scroll {
+        display: none;
+    }
+}

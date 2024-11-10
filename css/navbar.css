@@ -1,0 +1,122 @@
+/* Header and Navbar Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: transparent; /* Fully transparent initially */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+header.scrolled {
+    background-color: rgba(255, 154, 157, 0.5); /* Background appears when scrolled, 50% opacity */
+}
+
+.custom-navbar {
+    padding: 0 30px; /* Added horizontal padding for left and right margins */
+    height: 65px; /* Explicit height for better control */
+}
+
+.navbar-brand {
+    margin: 0; /* Reset any unnecessary margins */
+    display: flex;
+    align-items: center; /* Ensure logo is centered vertically */
+    padding-top: 0; /* Remove padding to improve alignment */
+}
+
+.nav-logo {
+    width: 130px; /* Larger logo size for better visibility */
+    height: auto;
+}
+
+/* Container Styling */
+.container-fluid {
+    display: flex;
+    align-items: center; /* Vertically align all items */
+    justify-content: space-between;
+    height: 100%; /* Make sure container fills the height of navbar */
+    padding: 0 15px; /* Add padding to ensure items are not too close to edges */
+}
+
+/* Navigation Links Styling (Initial State) */
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 50px; /* Increased spacing between links for a minimal look */
+    margin: 0;
+    align-items: center; /* Align items vertically */
+    margin-left: auto; /* Move all selectable menu items to the right */
+}
+
+.navbar-nav .nav-link {
+    color: #f47cb9; /* Updated color for initial link state */
+    font-size: 18px; /* Larger font size for readability */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* Prevent links from wrapping to new lines */
+    line-height: 1; /* Reduce line height to eliminate extra height */
+    padding: 5px 0; /* Padding for better vertical alignment */
+    position: relative; /* To position the underline effect */
+    font-weight: 600; /* Bold weight to make it stand out */
+}
+
+/* Navigation Links Styling (Scrolled State) */
+header.scrolled .nav-link {
+    color: #ffffff; /* White color for better contrast after scrolling */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff6b6b; /* Highlight color on hover */
+}
+
+/* Underline Effect for Navigation Links */
+.navbar-nav .nav-link::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: #ff5b5b; /* Darker pink for the underline effect */
+    position: absolute;
+    top: 100%; /* Position underline below the text */
+    width: 0;
+    transition: width 250ms ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::before {
+    width: 100%; /* Full width underline on hover */
+}
+
+/* Navbar Toggler (for Hamburger Menu) */
+.navbar-toggler {
+    border: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container-fluid {
+        display: flex;
+        align-items: center; /* Vertically align all items */
+        justify-content: flex-start; /* Ensure alignment to the left */
+        height: 100%; /* Make sure container fills the height of navbar */
+        padding: 0; /* Remove default padding */
+    }
+
+    .navbar-brand {
+        margin: 0; /* Remove all margins */
+        padding: 0; /* Remove any additional padding */
+        padding-right: 20px; /* Add some spacing between logo and nav links */
+    }
+
+    .nav-logo {
+        width: 80px; /* Adjust logo size for better alignment on smaller screens */
+    }
+
+    .navbar-nav {
+        margin-left: 0; /* Remove margin to allow items to align directly next to the logo */
+        gap: 15px; /* Reduce spacing between links on smaller screens */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 16px; /* Adjust link font size for smaller screens */
+    }
+}
