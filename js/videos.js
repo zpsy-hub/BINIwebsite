@@ -1,14 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const playlistItems = document.querySelectorAll('.playlist-item');
+    const playlistItems = document.querySelectorAll('.playlist-item .video-thumbnail');
 
-    playlistItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const iframeSrc = item.getAttribute('data-src');
+    playlistItems.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            const parent = thumbnail.parentElement;
+            const videoId = thumbnail.src.match(/vi\/([^/]+)/)[1];
             const iframe = document.createElement('iframe');
-            iframe.src = iframeSrc;
+
+            iframe.src = `https://www.youtube.com/embed/${videoId}`;
+            iframe.frameBorder = "0";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             iframe.allowFullscreen = true;
-            item.innerHTML = ''; // Clear the current content
-            item.appendChild(iframe); // Add the iframe
+
+            thumbnail.style.display = 'none';
+            parent.appendChild(iframe);
         });
     });
 });
