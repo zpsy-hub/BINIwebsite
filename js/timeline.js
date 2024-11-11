@@ -30,10 +30,19 @@ function updateSlidePosition() {
 
 // Function to reset the progress bar for each slide
 function resetProgress() {
-  clearInterval(progressInterval);
+  // Clear the previous interval if it exists
+  if (progressInterval) {
+    clearInterval(progressInterval);
+  }
+  
+  // Reset progress to 0
   progress = 0;
+
+  // Update the progress bar's width
   mainProgressBar.style.width = `${progress}%`;
-  progressInterval = setInterval(updateProgress, 30); // Update progress every 30ms
+
+  // Set a new interval to update progress every 100ms (adjust as needed)
+  progressInterval = setInterval(updateProgress, 100); // Update progress every 100ms
 }
 
 // Function to update the progress bar
