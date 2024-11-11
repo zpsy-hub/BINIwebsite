@@ -63,6 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
         addEntryAnimations(index);
     }
 
+    // Function to show a specific member
+    function showMember(index) {
+        currentIndex = index;
+        updateActiveSlide(currentIndex);
+    }
+
     // Function to go to the next slide
     function nextSlide() {
         currentIndex = (currentIndex + 1) % totalItems;
@@ -83,8 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     memberLinks.forEach((link, index) => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
-            currentIndex = index;
-            updateActiveSlide(currentIndex);
+            showMember(index); // Use showMember to navigate directly to the selected member
         });
     });
 });
